@@ -7,7 +7,10 @@ library(Seurat)
 #this function takes a StandardizedExperiment object and returns a SeuratObject.
 #If running on a windows computer, it will also delete intermediate files
 #if running on another system, change the lines containing 'del' to a system appropriate
-#command
+#command.
+#se: SummarizedExperiment object
+#sName: character vector containing project name
+#verbose: flag, if TRUE the function will generate progress messages and any warnings
 #########################################################################################
 SEToSeurat<-function(se,sName, verbose = FALSE){
   sGSE<-as.data.frame(assay(se))
